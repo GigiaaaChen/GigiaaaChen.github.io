@@ -28,6 +28,16 @@
   a.teal-text:hover { color: #2970a3 !important; } 
   #intro { background: #2970a3 !important; } 
   .overlay { background: rgba(41,112,163,0.50) !important; }
+
+  .profile-pic {
+  width: 140px;           
+  height: 140px;
+  object-fit: cover;      
+  border-radius: 50%;
+  border: 6px solid #2970a3;  
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  }
+
   </style>
 
   <title>Georgia Chen | Software Developer</title>
@@ -577,16 +587,15 @@
 </main>
 
   <!-- typed.js -->
-<script type="text/javascript"> 
-  if (window.Typed) { 
-    var typed = new Typed('.typing',{ 
-      strings: ["Pythonist", "Developer", "Fast Learner"], 
-      loop: true, 
-      typeSpeed: 80, 
-      backSpeed: 40 
-    }); 
-  } 
-</script> 
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script type="text/javascript">
+    var typed = new Typed('.typing',{
+      strings: ["Pythonist", "Developer", "Fast Learner"],
+      loop: true,
+      typeSpeed: 80,
+      backSpeed: 40
+    });
+  </script>
 
   <!-- jQuery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
