@@ -21,26 +21,26 @@
   <!-- Custom Styles-->
   <link rel="stylesheet" href="/assets/css/style.css" />
 
-  <!-- Avatar ring + spacing (matches original size/feel) -->
+  <!-- Avatar ring + spacing (match Version 1 proportions) -->
   <style>
-    /* keep the header area tall so ring never overlaps "About" */
+    /* Header block height so menu items align like v1 */
     .side-nav.fixed.section.table-of-contents li.logo {
-      padding: 24px 0 8px;
-      height: 230px; /* original-ish header height */
+      padding: 15px 0 0;
+      height: 180px;               /* v1-like header height */
       box-sizing: border-box;
     }
-    /* ring size like the original avatar */
+    /* Avatar ring size/thickness like v1 */
     .profile-ring {
-      width: 180px;
-      height: 180px;
+      width: 140px;                /* ring outer diameter */
+      height: 140px;
       border-radius: 50%;
-      border: 8px solid #8fb3ad; /* teal ring */
-      margin: 0 auto 14px;       /* small gap above “About” */
+      border: 5px solid #8fb3ad;   /* thinner ring */
+      margin: 0 auto 8px;          /* small gap above “About” */
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: #f7f9f8;       /* looks okay even if image missing */
+      background: #f7f9f8;
       box-sizing: border-box;
     }
     .profile-ring img {
@@ -49,10 +49,10 @@
       object-fit: cover;
       display: block;
     }
-    /* mobile: keep proportions comfortable */
+    /* Mobile scaling */
     @media (max-width: 992px){
-      .side-nav.fixed.section.table-of-contents li.logo { height: 210px; }
-      .profile-ring { width: 170px; height: 170px; border-width: 8px; margin-bottom: 12px; }
+      .side-nav.fixed.section.table-of-contents li.logo { height: 160px; }
+      .profile-ring { width: 130px; height: 130px; border-width: 5px; margin-bottom: 6px; }
     }
   </style>
 
