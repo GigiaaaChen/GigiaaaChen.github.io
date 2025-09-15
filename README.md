@@ -98,3 +98,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE)
 **Github Website**
 ![Live website homepage](Updated-Info/Travel.png)
 
+## Activity 5
+
+**GitHub Repo with commits**
+![Repo after Activity 3](Updated-Info/Repo-activity5.png)
+
+**Github Website**
+![Live website homepage](Updated-Info/Recentproject 1.png)
+![Live website homepage](Updated-Info/Recentproject 2.png)
