@@ -151,7 +151,7 @@
       </li>
       <li class="bold">
         <a aria-label="Navigate to the Recent Projects section" href="#recentprojects" class="waves-effect waves-dark teal-text">
-          <i class="mdi-av-my-library-books small"></i><span>RecentProjects</span></a> <!-- //changes -->
+          <i class="mdi-av-my-library-books small"></i><span>RecentProjects</span></a> 
       </li>
       <li class="bold">
         <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text">
@@ -204,7 +204,7 @@
       </li>
       <li class="bold">
         <a aria-label="Navigate to the Recent Projects section" href="#recentprojects" class="waves-effect waves-dark teal-text">
-          <i class="mdi-av-my-library-books small"></i><span>RecentProjects</span></a> <!-- //changes -->
+          <i class="mdi-av-my-library-books small"></i><span>RecentProjects</span></a> 
       </li>
       <li class="bold">
         <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text">
@@ -359,15 +359,15 @@
     </section>
 
     <!-- Recent Projects (dynamic) -->
-    <section id="recentprojects" class="section scrollspy"> <!-- //changes -->
-      <h3 class="page-title white-text teal">Recent Projects</h3> <!-- //changes -->
-      <div class="container"> <!-- //changes -->
-        <div id="projects-list" class="row"></div> <!-- //changes -->
-        <div class="center" style="margin-top:12px;"> <!-- //changes -->
-          <a id="loadMoreProjects" class="btn waves-effect waves-light teal lighten-1">Load More</a> <!-- //changes -->
-        </div> <!-- //changes -->
-      </div> <!-- //changes -->
-    </section> <!-- //changes -->
+    <section id="recentprojects" class="section scrollspy"> 
+      <h3 class="page-title white-text teal">Recent Projects</h3> 
+      <div class="container"> 
+        <div id="projects-list" class="row"></div> 
+        <div class="center" style="margin-top:12px;"> 
+          <a id="loadMoreProjects" class="btn waves-effect waves-light teal lighten-1">Load More</a> 
+        </div> 
+      </div> 
+    </section> 
 
     <!-- Fourth Section: Projects -->
     <section id="projects" class="section scrollspy">
@@ -617,15 +617,16 @@
 </main>
 
   <!-- typed.js -->
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script type="text/javascript">
-    var typed = new Typed('.typing',{
-      strings: ["Pythonist", "Developer", "Fast Learner"],
-      loop: true,
-      typeSpeed: 80,
-      backSpeed: 40
-    });
-  </script>
+<script type="text/javascript"> 
+  if (window.Typed) { 
+    var typed = new Typed('.typing',{ 
+      strings: ["Pythonist", "Developer", "Fast Learner"], 
+      loop: true, 
+      typeSpeed: 80, 
+      backSpeed: 40 
+    }); 
+  } 
+</script> 
 
   <!-- jQuery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -633,89 +634,89 @@
   <!-- Materialize - Compiled and minified JavaScript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
 
-  <script> /* //changes */
-    const projects = [ /* //changes */
-      { /* //changes */
-        title: "OCR Receipt Scanner (PyTorch)", /* //changes */
-        date: "2025-01-15", /* //changes */
-        image: "/assets/img/project-ocr-placeholder.jpg", /* //changes */
-        summary: "Deep-learning model to automate receipt parsing and expense tracking.", /* //changes */
-        tools: ["PyTorch","ResNet","CRNN","VGG16","RNN","CTC Loss"], /* //changes */
-        live: "#", /* //changes */
-        source: "#" /* //changes */
-      }, /* //changes */
-      { /* //changes */
-        title: "Interactive Map Software (C++)", /* //changes */
-        date: "2024-04-01", /* //changes */
-        image: "/assets/img/project-gis-placeholder.jpg", /* //changes */
-        summary: "GIS mapping app with GUI focused on usability and responsiveness.", /* //changes */
-        tools: ["C++","EZGL","GTK","Git"], /* //changes */
-        live: "#", /* //changes */
-        source: "#" /* //changes */
-      }, /* //changes */
-      { /* //changes */
-        title: "Aircraft Reliability Dashboard (Power BI)", /* //changes */
-        date: "2024-10-10", /* //changes */
-        image: "/assets/img/project-ocr-placeholder.jpg", /* //changes */
-        summary: "Real-time alerting and multi-year trend visualization for fleet incidents.", /* //changes */
-        tools: ["Power BI","DAX","Python"], /* //changes */
-        live: "#", /* //changes */
-        source: "#" /* //changes */
-      } /* //changes */
-    ]; /* //changes */
+  <script> 
+    const projects = [
+      { 
+        title: "OCR Receipt Scanner (PyTorch)", 
+        date: "2025-01-15", 
+        image: "/assets/img/project-ocr-placeholder.jpg", 
+        summary: "Deep-learning model to automate receipt parsing and expense tracking.", 
+        tools: ["PyTorch","ResNet","CRNN","VGG16","RNN","CTC Loss"], 
+        live: "#", 
+        source: "#" 
+      }, 
+      { 
+        title: "Interactive Map Software (C++)", 
+        date: "2024-04-01", 
+        image: "/assets/img/project-gis-placeholder.jpg", 
+        summary: "GIS mapping app with GUI focused on usability and responsiveness.", 
+        tools: ["C++","EZGL","GTK","Git"], 
+        live: "#", 
+        source: "#" 
+      }, 
+      { 
+        title: "Aircraft Reliability Dashboard (Power BI)", 
+        date: "2024-10-10", 
+        image: "/assets/img/project-ocr-placeholder.jpg", 
+        summary: "Real-time alerting and multi-year trend visualization for fleet incidents.", 
+        tools: ["Power BI","DAX","Python"], 
+        live: "#", 
+        source: "#" 
+      } 
+    ]; 
 
-    projects.sort((a,b)=>new Date(b.date)-new Date(a.date)); /* //changes */
-    let visibleCount = 1; /* //changes */
+    projects.sort((a,b)=>new Date(b.date)-new Date(a.date)); 
+    let visibleCount = 1; 
 
-    function chipList(arr){ /* //changes */
-      return arr.map(t=>`<div class="chip">${t}</div>`).join(""); /* //changes */
-    } /* //changes */
+    function chipList(arr){ 
+      return arr.map(t=>`<div class="chip">${t}</div>`).join(""); 
+    } 
 
-    function projectCard(p){ /* //changes */
-      return ` /* //changes */
-      <div class="col s12 m6 l4"> /* //changes */
-        <div class="card medium"> /* //changes */
-          <div class="card-image waves-effect waves-block waves-light"> /* //changes */
-            <img alt="${p.title}" src="${p.image}" class="activator" style="height:100%;width:100%;"> /* //changes */
-          </div> /* //changes */
-          <div class="card-content"> /* //changes */
-            <span class="card-title activator teal-text hoverline"> /* //changes */
-              ${p.title} /* //changes */
-              <i class="mdi-navigation-more-vert right"></i> /* //changes */
-            </span> /* //changes */
-            <p class="grey-text">${new Date(p.date).toLocaleDateString()}</p> /* //changes */
-            <p>${p.summary}</p> /* //changes */
-          </div> /* //changes */
-          <div class="card-reveal"> /* //changes */
-            <span class="card-title grey-text"> /* //changes */
-              <small>Tech</small> /* //changes */
-              <i class="mdi-navigation-close right"></i> /* //changes */
-            </span> /* //changes */
-            <div style="margin:8px 0;">${chipList(p.tools)}</div> /* //changes */
-            <div class="card-action"> /* //changes */
-              ${p.live ? `<a aria-label="View Online" href="${p.live}" target="_blank" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped" data-position="top" data-tooltip="View Online"><i class="fa fa-external-link"></i></a>` : ""} /* //changes */
-              ${p.source ? `<a aria-label="View Source" href="${p.source}" target="_blank" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped" data-position="top" data-tooltip="View Source"><i class="fa fa-github"></i></a>` : ""} /* //changes */
-            </div> /* //changes */
-          </div> /* //changes */
-        </div> /* //changes */
-      </div>`; /* //changes */
-    } /* //changes */
+    function projectCard(p){ 
+      return ` 
+      <div class="col s12 m6 l4"> 
+        <div class="card medium"> 
+          <div class="card-image waves-effect waves-block waves-light"> 
+            <img alt="${p.title}" src="${p.image}" class="activator" style="height:100%;width:100%;"> 
+          </div> 
+          <div class="card-content"> 
+            <span class="card-title activator teal-text hoverline"> 
+              ${p.title} 
+              <i class="mdi-navigation-more-vert right"></i> 
+            </span> 
+            <p class="grey-text">${new Date(p.date).toLocaleDateString()}</p> 
+            <p>${p.summary}</p> 
+          </div> 
+          <div class="card-reveal"> 
+            <span class="card-title grey-text"> 
+              <small>Tech</small> 
+              <i class="mdi-navigation-close right"></i> 
+            </span> 
+            <div style="margin:8px 0;">${chipList(p.tools)}</div> 
+            <div class="card-action"> 
+              ${p.live ? `<a aria-label="View Online" href="${p.live}" target="_blank" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped" data-position="top" data-tooltip="View Online"><i class="fa fa-external-link"></i></a>` : ""} 
+              ${p.source ? `<a aria-label="View Source" href="${p.source}" target="_blank" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped" data-position="top" data-tooltip="View Source"><i class="fa fa-github"></i></a>` : ""} 
+            </div> 
+          </div> 
+        </div> 
+      </div>`; 
+    } 
 
-    function renderProjects(){ /* //changes */
-      const container = document.getElementById("projects-list"); /* //changes */
-      container.innerHTML = projects.slice(0, visibleCount).map(projectCard).join(""); /* //changes */
-      const btn = document.getElementById("loadMoreProjects"); /* //changes */
-      btn.style.display = (visibleCount >= projects.length) ? "none" : "inline-block"; /* //changes */
-      if (window.$ && $.fn.tooltip) { $(".tooltipped").tooltip(); } /* //changes */
-    } /* //changes */
+    function renderProjects(){ 
+      const container = document.getElementById("projects-list"); 
+      container.innerHTML = projects.slice(0, visibleCount).map(projectCard).join(""); 
+      const btn = document.getElementById("loadMoreProjects"); 
+      btn.style.display = (visibleCount >= projects.length) ? "none" : "inline-block"; 
+      if (window.$ && $.fn.tooltip) { $(".tooltipped").tooltip(); } 
+    } 
 
-    document.addEventListener("DOMContentLoaded", function(){ /* //changes */
-      renderProjects(); /* //changes */
-      document.getElementById("loadMoreProjects").addEventListener("click", function(){ /* //changes */
-        visibleCount = Math.min(visibleCount + 2, projects.length); /* //changes */
-        renderProjects(); /* //changes */
-      }); /* //changes */
-    }); /* //changes */
+    document.addEventListener("DOMContentLoaded", function(){ 
+      renderProjects(); 
+      document.getElementById("loadMoreProjects").addEventListener("click", function(){ 
+        visibleCount = Math.min(visibleCount + 2, projects.length); 
+        renderProjects(); 
+      }); 
+    }); 
   </script>
 
   <script>
