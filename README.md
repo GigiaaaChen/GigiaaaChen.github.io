@@ -82,3 +82,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE)
 **Github Website**
 ![Live website homepage](Updated-Info/Website.png)
 
+## Activity 3
+
+**GitHub Repo with commits**
+![Repo after Activity 3](Updated-Info/Repo-activity3.png)
+
+**Github Website**
+![Live website homepage](Updated-Info/Theme-colour.png)
+
