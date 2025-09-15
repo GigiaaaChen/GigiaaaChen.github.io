@@ -90,3 +90,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE)
 **Github Website**
 ![Live website homepage](Updated-Info/Theme-colour.png)
 
+## Activity 4
+
+**GitHub Repo with commits**
+![Repo after Activity 3](Updated-Info/Repo-activity4.png)
+
+**Github Website**
+![Live website homepage](Updated-Info/Travel.png)
+
