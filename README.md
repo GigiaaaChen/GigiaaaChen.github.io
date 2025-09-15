@@ -3,19 +3,21 @@
 > A clean, beautiful, responsive portfolio template for Software Developers!
 
 This repo is a clone of [varadbhogayata.github.io](https://github.com/varadbhogayata/varadbhogayata.github.io)
+My personal website [GigiaaaChen.github.io](https://GigiaaaChen.github.io)
 
-![GitHub stars](https://img.shields.io/github/stars/varadbhogayata/varadbhogayata.github.io) 
-![GitHub forks](https://img.shields.io/github/forks/varadbhogayata/varadbhogayata.github.io)
-[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/varadbhogayata/varadbhogayata.github.io/commits/master)
-[![Website shields.io](https://img.shields.io/badge/website-up-yellow)](http://varadbhogayata.github.io/)
-[![Ask Me Anything !](https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg)](https://www.linkedin.com/in/varadbhogayata/)
+![GitHub stars](https://img.shields.io/github/stars/GigiaaaChen/GigiaaaChen.github.io) 
+![GitHub forks](https://img.shields.io/github/forks/GigiaaaChen/GigiaaaChen.github.io)
+[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/GigiaaaChen/GigiaaaChen.github.io/commits/master)
+[![Website shields.io](https://img.shields.io/badge/website-up-yellow)](https://GigiaaaChen.github.io)
+[![Ask Me Anything !](https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg)](https://www.linkedin.com/in/georgiachennn/)
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 ### Website Preview
 <p align="center"> 
   <kbd>
-    <a href="https://varadbhogayata.github.io" target="_blank"><img src="examples/preview.gif">
-  </a>
+    <a href="https://GigiaaaChen.github.io" target="_blank">
+      <img src="Updated-Info/Website.png">
+    </a>
   </kbd>
 </p>
 
@@ -44,7 +46,7 @@ This repo is a clone of [varadbhogayata.github.io](https://github.com/varadbhoga
 ✔️ Contact Info\
 ✔️ Resume
 
-To view a live example, **[click here](https://varadbhogayata.github.io/)**
+To view a live example, **[click here](https://GigiaaaChen.github.io)**
 
 ## Tools Used 🛠️
 * [<b>GitHub Pages</b>](https://create-react-app.dev/docs/deployment/#github-pages) - To host my static website (HTML, CSS, JS).
@@ -71,3 +73,12 @@ To view a live example, **[click here](https://varadbhogayata.github.io/)**
 
 ## License 📄
 This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
+
+## Activity 2 
+
+**GitHub Repo with commits**
+![Repo after Activity 2](Updated-Info/repo-screenshot.png)
+
+**Github Website**
+![Live website homepage](Updated-Info/Website.png)
+
