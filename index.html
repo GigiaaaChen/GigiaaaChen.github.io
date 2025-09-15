@@ -150,6 +150,10 @@
           <i class="mdi-av-my-library-books small"></i><span>Projects</span></a>
       </li>
       <li class="bold">
+        <a aria-label="Navigate to the Recent Projects section" href="#recentprojects" class="waves-effect waves-dark teal-text">
+          <i class="mdi-av-my-library-books small"></i><span>RecentProjects</span></a> <!-- //changes -->
+      </li>
+      <li class="bold">
         <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text">
           <i class="mdi-action-assessment small"></i><span>Skills</span></a>
       </li>
@@ -197,6 +201,10 @@
       <li class="bold">
         <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text">
           <i class="mdi-av-my-library-books small"></i><span>Projects</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Recent Projects section" href="#recentprojects" class="waves-effect waves-dark teal-text">
+          <i class="mdi-av-my-library-books small"></i><span>RecentProjects</span></a> <!-- //changes -->
       </li>
       <li class="bold">
         <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text">
@@ -350,6 +358,17 @@
       </div>
     </section>
 
+    <!-- Recent Projects (dynamic) -->
+    <section id="recentprojects" class="section scrollspy"> <!-- //changes -->
+      <h3 class="page-title white-text teal">Recent Projects</h3> <!-- //changes -->
+      <div class="container"> <!-- //changes -->
+        <div id="projects-list" class="row"></div> <!-- //changes -->
+        <div class="center" style="margin-top:12px;"> <!-- //changes -->
+          <a id="loadMoreProjects" class="btn waves-effect waves-light teal lighten-1">Load More</a> <!-- //changes -->
+        </div> <!-- //changes -->
+      </div> <!-- //changes -->
+    </section> <!-- //changes -->
+
     <!-- Fourth Section: Projects -->
     <section id="projects" class="section scrollspy">
       <h3 class="page-title white-text teal">Projects</h3>
@@ -432,6 +451,7 @@
       </div>
     </section>
 
+    
     <!-- Fifth Section: Skills -->
     <section id="skills" class="section scrollspy">
       <h3 class="page-title white-text teal">Skills</h3>
@@ -612,11 +632,95 @@
 
   <!-- Materialize - Compiled and minified JavaScript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+
+  <script> /* //changes */
+    const projects = [ /* //changes */
+      { /* //changes */
+        title: "OCR Receipt Scanner (PyTorch)", /* //changes */
+        date: "2025-01-15", /* //changes */
+        image: "/assets/img/project-ocr-placeholder.jpg", /* //changes */
+        summary: "Deep-learning model to automate receipt parsing and expense tracking.", /* //changes */
+        tools: ["PyTorch","ResNet","CRNN","VGG16","RNN","CTC Loss"], /* //changes */
+        live: "#", /* //changes */
+        source: "#" /* //changes */
+      }, /* //changes */
+      { /* //changes */
+        title: "Interactive Map Software (C++)", /* //changes */
+        date: "2024-04-01", /* //changes */
+        image: "/assets/img/project-gis-placeholder.jpg", /* //changes */
+        summary: "GIS mapping app with GUI focused on usability and responsiveness.", /* //changes */
+        tools: ["C++","EZGL","GTK","Git"], /* //changes */
+        live: "#", /* //changes */
+        source: "#" /* //changes */
+      }, /* //changes */
+      { /* //changes */
+        title: "Aircraft Reliability Dashboard (Power BI)", /* //changes */
+        date: "2024-10-10", /* //changes */
+        image: "/assets/img/project-ocr-placeholder.jpg", /* //changes */
+        summary: "Real-time alerting and multi-year trend visualization for fleet incidents.", /* //changes */
+        tools: ["Power BI","DAX","Python"], /* //changes */
+        live: "#", /* //changes */
+        source: "#" /* //changes */
+      } /* //changes */
+    ]; /* //changes */
+
+    projects.sort((a,b)=>new Date(b.date)-new Date(a.date)); /* //changes */
+    let visibleCount = 1; /* //changes */
+
+    function chipList(arr){ /* //changes */
+      return arr.map(t=>`<div class="chip">${t}</div>`).join(""); /* //changes */
+    } /* //changes */
+
+    function projectCard(p){ /* //changes */
+      return ` /* //changes */
+      <div class="col s12 m6 l4"> /* //changes */
+        <div class="card medium"> /* //changes */
+          <div class="card-image waves-effect waves-block waves-light"> /* //changes */
+            <img alt="${p.title}" src="${p.image}" class="activator" style="height:100%;width:100%;"> /* //changes */
+          </div> /* //changes */
+          <div class="card-content"> /* //changes */
+            <span class="card-title activator teal-text hoverline"> /* //changes */
+              ${p.title} /* //changes */
+              <i class="mdi-navigation-more-vert right"></i> /* //changes */
+            </span> /* //changes */
+            <p class="grey-text">${new Date(p.date).toLocaleDateString()}</p> /* //changes */
+            <p>${p.summary}</p> /* //changes */
+          </div> /* //changes */
+          <div class="card-reveal"> /* //changes */
+            <span class="card-title grey-text"> /* //changes */
+              <small>Tech</small> /* //changes */
+              <i class="mdi-navigation-close right"></i> /* //changes */
+            </span> /* //changes */
+            <div style="margin:8px 0;">${chipList(p.tools)}</div> /* //changes */
+            <div class="card-action"> /* //changes */
+              ${p.live ? `<a aria-label="View Online" href="${p.live}" target="_blank" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped" data-position="top" data-tooltip="View Online"><i class="fa fa-external-link"></i></a>` : ""} /* //changes */
+              ${p.source ? `<a aria-label="View Source" href="${p.source}" target="_blank" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped" data-position="top" data-tooltip="View Source"><i class="fa fa-github"></i></a>` : ""} /* //changes */
+            </div> /* //changes */
+          </div> /* //changes */
+        </div> /* //changes */
+      </div>`; /* //changes */
+    } /* //changes */
+
+    function renderProjects(){ /* //changes */
+      const container = document.getElementById("projects-list"); /* //changes */
+      container.innerHTML = projects.slice(0, visibleCount).map(projectCard).join(""); /* //changes */
+      const btn = document.getElementById("loadMoreProjects"); /* //changes */
+      btn.style.display = (visibleCount >= projects.length) ? "none" : "inline-block"; /* //changes */
+      if (window.$ && $.fn.tooltip) { $(".tooltipped").tooltip(); } /* //changes */
+    } /* //changes */
+
+    document.addEventListener("DOMContentLoaded", function(){ /* //changes */
+      renderProjects(); /* //changes */
+      document.getElementById("loadMoreProjects").addEventListener("click", function(){ /* //changes */
+        visibleCount = Math.min(visibleCount + 2, projects.length); /* //changes */
+        renderProjects(); /* //changes */
+      }); /* //changes */
+    }); /* //changes */
+  </script>
+
   <script>
-    // Materialize - Initializers
     $(document).ready(function () {
       $(".scrollspy").scrollSpy()
-      // Initialize collapse button
       $(".button-collapse").sideNav({
         menuWidth: 190,
         edge: "left",
