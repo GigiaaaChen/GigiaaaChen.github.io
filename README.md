@@ -104,5 +104,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE)
 ![Repo after Activity 3](Updated-Info/Repo-activity5.png)
 
 **Github Website**
-![Live website homepage](Updated-Info/Recentproject 1.png)
-![Live website homepage](Updated-Info/Recentproject 2.png)
+![Live website homepage](Updated-Info/Recentproject1.png)
+![Live website homepage](Updated-Info/Recentproject2.png)
