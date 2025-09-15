@@ -21,18 +21,38 @@
   <!-- Custom Styles-->
   <link rel="stylesheet" href="/assets/css/style.css" />
 
-  <!-- Added: make the empty circle visible -->
+  <!-- Avatar ring + spacing fix -->
   <style>
-    .profile-pic{
-      width:180px;
-      height:180px;
-      border-radius:50%;
-      border:8px solid #8fb3ad; /* teal ring */
-      object-fit:cover;
-      box-shadow:none;
-      background:transparent;
-      display:block;
-      margin:0 auto;
+    /* Keep the logo area tall enough so the ring never overlaps "About" */
+    .side-nav.fixed.section.table-of-contents li.logo {
+      padding: 24px 0 8px;
+      height: 260px;               /* adjust if you change ring size */
+      box-sizing: border-box;
+    }
+    /* The ring */
+    .profile-ring {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 10px solid #8fb3ad;  /* teal ring */
+      margin: 0 auto 22px;         /* bottom margin = breathing room above "About" */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #f7f9f8;         /* subtle fill so an empty ring still reads */
+      box-sizing: border-box;
+    }
+    .profile-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* Mobile: slightly smaller ring so the menu feels roomy */
+    @media (max-width: 992px){
+      .side-nav.fixed.section.table-of-contents li.logo { height: 210px; }
+      .profile-ring { width: 180px; height: 180px; border-width: 8px; margin-bottom: 18px; }
     }
   </style>
 
@@ -99,12 +119,11 @@
 
       <li class="logo">
         <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-          class="brand-logo grey-blue-text">
-          <!-- Replaced: show empty circle (transparent image) -->
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII="
-            class="circle img-responsive profile-pic"
-            alt="profile placeholder">
+          class="brand-logo grey-blue-text" style="line-height:0;">
+          <!-- RING + PHOTO (keeps size even if you later remove the img for an empty ring) -->
+          <div class="profile-ring">
+            <img src="/Updated-Info/Profile%20image.jpg" alt="Georgia Chen profile photo">
+          </div>
         </a>
       </li>
 
@@ -139,7 +158,7 @@
       </li>
 
       <li class="bold">
-        <a aria-label="Open Varad's resume in a new tab" href="https://varadbhogayata.github.io/assets/resume/Varad_Bhogayata_Resume.pdf" target="_blank"
+        <a aria-label="Open Georgia's resume in a new tab" href="/Updated-Info/Resume.pdf" target="_blank"
         class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>  
       </li>
     </ul>
@@ -185,8 +204,8 @@
             class="mdi-content-mail small"></i><span>Contact</span></a>
       </li>
       <li class="bold">
-        <a aria-label="Open Varad's Resume in a new tab"
-          href="https://drive.google.com/file/d/1B6MZ1z0-7NsefC3Lm_q-uhib28MTqpE9/view?usp=sharing" target="_blank"
+        <a aria-label="Open Georgia's Resume in a new tab"
+          href="/Updated-Info/Resume.pdf" target="_blank"
           class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
       </li>
     </ul>
@@ -211,7 +230,7 @@
                   <i class="fa fa-linkedin"></i>
                 </button>
               </a>
-              <a href="https://github.com/varadbhogayata/" target="_blank">
+              <a href="https://github.com/GigiaaaChen" target="_blank">
                 <button class="icon-btn github">
                   <i class="fa fa-github"></i>
                 </button>
