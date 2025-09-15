@@ -21,26 +21,26 @@
   <!-- Custom Styles-->
   <link rel="stylesheet" href="/assets/css/style.css" />
 
-  <!-- Avatar ring + spacing fix -->
+  <!-- Avatar ring + spacing (matches original size/feel) -->
   <style>
-    /* Keep the logo area tall enough so the ring never overlaps "About" */
+    /* keep the header area tall so ring never overlaps "About" */
     .side-nav.fixed.section.table-of-contents li.logo {
       padding: 24px 0 8px;
-      height: 260px;               /* adjust if you change ring size */
+      height: 230px; /* original-ish header height */
       box-sizing: border-box;
     }
-    /* The ring */
+    /* ring size like the original avatar */
     .profile-ring {
-      width: 220px;
-      height: 220px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      border: 10px solid #8fb3ad;  /* teal ring */
-      margin: 0 auto 22px;         /* bottom margin = breathing room above "About" */
+      border: 8px solid #8fb3ad; /* teal ring */
+      margin: 0 auto 14px;       /* small gap above “About” */
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: #f7f9f8;         /* subtle fill so an empty ring still reads */
+      background: #f7f9f8;       /* looks okay even if image missing */
       box-sizing: border-box;
     }
     .profile-ring img {
@@ -49,14 +49,14 @@
       object-fit: cover;
       display: block;
     }
-    /* Mobile: slightly smaller ring so the menu feels roomy */
+    /* mobile: keep proportions comfortable */
     @media (max-width: 992px){
       .side-nav.fixed.section.table-of-contents li.logo { height: 210px; }
-      .profile-ring { width: 180px; height: 180px; border-width: 8px; margin-bottom: 18px; }
+      .profile-ring { width: 170px; height: 170px; border-width: 8px; margin-bottom: 12px; }
     }
   </style>
 
-  <title>Varad Bhogayata | Software Developer</title>
+  <title>Georgia Chen | Software Developer</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126939217-2"></script>
@@ -70,19 +70,19 @@
   <!-- Open Graph-->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Varad Bhogayata | Software Developer" />
+  <meta property="og:title" content="Georgia Chen | Software Developer" />
   <meta property="og:description" content="Software Developer" />
-  <meta property="og:url" content="https://varadbhogayata.github.io/" />
-  <meta property="og:site_name" content="Varad Bhogayata | Software Developer" />
-  <meta property="article:publisher" content="https://varadbhogayata.github.io/" />
-  <meta property="og:image" content="https://varadbhogayata.github.io/examples/preview.JPG" />
+  <meta property="og:url" content="https://gigiaaachen.github.io/" />
+  <meta property="og:site_name" content="Georgia Chen | Software Developer" />
+  <meta property="article:publisher" content="https://gigiaaachen.github.io/" />
+  <meta property="og:image" content="https://gigiaaachen.github.io/examples/preview.JPG" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@varad_bhogayata" />
   <meta name="twitter:title" content="Coder | Technofreak | Explorer | Minimalist | Humane" />
   <meta name="twitter:description" content="Software Developer" />
   <meta name="twitter:url" content="https://twitter.com/varad_bhogayata" />
-  <meta name="author" content="Varad Bhogayata" />
+  <meta name="author" content="Georgia Chen" />
   <meta name="description" content="Software Developer with a passion for backend development and artificial intelligence." />
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png" />
   <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png" />
@@ -109,77 +109,70 @@
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGZH8HT"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
   <!-- Navigation Menu-->
-  <!-- Nav class 1 -->
+  <!-- Nav class 1 (desktop) -->
   <nav class="hide-on-small-only">
     <ul class="side-nav fixed section table-of-contents">
-
       <li class="logo">
         <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
           class="brand-logo grey-blue-text" style="line-height:0;">
-          <!-- RING + PHOTO (keeps size even if you later remove the img for an empty ring) -->
           <div class="profile-ring">
+            <!-- space in filename encoded as %20 -->
             <img src="/Updated-Info/Profile%20image.jpg" alt="Georgia Chen profile photo">
           </div>
         </a>
       </li>
 
       <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
+        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text">
+          <i class="mdi-social-person small"></i><span>About</span></a>
       </li>
       <li class="bold">
         <a aria-label="Navigate to the Experience section" href="#experience"
           class="waves-effect waves-dark teal-text"><i
             class="mdi-action-trending-up small"></i><span>Experience</span></a>
       </li>
-
       <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
+        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text">
+          <i class="mdi-av-my-library-books small"></i><span>Projects</span></a>
       </li>
-
       <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
+        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text">
+          <i class="mdi-action-assessment small"></i><span>Skills</span></a>
       </li>
-      
       <li class="bold">
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
+        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text">
+          <i class="mdi-social-school small"></i><span>Education</span></a>
       </li>
-
       <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
+        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text">
+          <i class="mdi-content-mail small"></i><span>Contact</span></a>
       </li>
-
       <li class="bold">
         <a aria-label="Open Georgia's resume in a new tab" href="/Updated-Info/Resume.pdf" target="_blank"
-        class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>  
+          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
       </li>
     </ul>
   </nav>
 
-  <!-- Nav class 2 -->
+  <!-- Nav class 2 (mobile top bar) -->
   <nav class="hide-on-large only trigger z-depth-1">
     <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
       class="button-collapse"><i class="mdi-navigation-menu"></i></a>
     <div class="name-title">
-      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">Varad
-        Bhogayata</a><span class="black-text">Software Developer</span>
+      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">Georgia
+        Chen</a><span class="black-text">Software Developer</span>
     </div>
   </nav>
 
-  <!-- Nav class 3 -->
+  <!-- Nav class 3 (mobile side menu) -->
   <nav class="hide-on-large only">
     <ul id="slide-out" class="side-nav">
       <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
+        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text">
+          <i class="mdi-social-person small"></i><span>About</span></a>
       </li>
       <li class="bold">
         <a aria-label="Navigate to the Experience section" href="#experience"
@@ -187,25 +180,23 @@
             class="mdi-action-trending-up small"></i><span>Experience</span></a>
       </li>
       <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
+        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text">
+          <i class="mdi-av-my-library-books small"></i><span>Projects</span></a>
       </li>
       <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
+        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text">
+          <i class="mdi-action-assessment small"></i><span>Skills</span></a>
       </li>
       <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
+        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text">
+          <i class="mdi-social-school small"></i><span>Education</span></a>
       </li>
       <li class="bold">
-        <a aria-label="Open Georgia's Resume in a new tab"
-          href="/Updated-Info/Resume.pdf" target="_blank"
+        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text">
+          <i class="mdi-content-mail small"></i><span>Contact</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Open Georgia's Resume in a new tab" href="/Updated-Info/Resume.pdf" target="_blank"
           class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
       </li>
     </ul>
@@ -256,7 +247,7 @@
         </p>
         <p>
           <ul>
-            <li><b>Languages:</b> Python, C, C++
+            <li><b>Languages:</b> Python, C, C++</li>
             <li><b>Databases:</b> MySQL</li>
             <li><b>Libraries:</b> NumPy, Pandas, OpenCV</li>
             <li><b>Frameworks:</b> TensorFlow, PyTorch</li>
@@ -274,7 +265,7 @@
       <h3 class="page-title white-text teal">Experience</h3>
       <div class="container">
 
-        <!-- MHIRJ (kept) -->
+        <!-- MHIRJ -->
         <div class="card">
           <div class="card-content">
             <div class="row">
@@ -307,12 +298,11 @@
           </div>
         </div>
 
-        <!-- Peking University BCI Hat (new) -->
+        <!-- Peking University BCI Hat -->
         <div class="card">
           <div class="card-content">
             <div class="row">
               <div class="col s12 m2">
-                <!-- Temporary placeholder image; replace later -->
                 <img alt="Peking University placeholder logo" src="/assets/img/exp-meditab-logo-500x500.jpg" class="responsive-img center-block" />
               </div>
               <div class="col s12 m10">
@@ -351,7 +341,6 @@
           <div class="col s12 m6 l4">
             <div class="card medium">
               <div class="card-image waves-effect waves-block waves-light">
-                <!-- Placeholder image; replace with your own -->
                 <img alt="OCR Receipt Scanner placeholder" src="/assets/img/project-ocr-placeholder.jpg" style="height: 100%; width: 100%" class="activator" />
               </div>
               <div class="card-content">
@@ -387,7 +376,6 @@
           <div class="col s12 m6 l4">
             <div class="card medium">
               <div class="card-image waves-effect waves-block waves-light">
-                <!-- Placeholder image; replace with your own -->
                 <img alt="Interactive Map GIS placeholder" src="/assets/img/project-gis-placeholder.jpg" style="height: 100%; width: 100%" class="activator" />
               </div>
               <div class="card-content">
@@ -419,7 +407,7 @@
             </div>
           </div>
 
-          <!-- (All other projects removed as requested) -->
+          <!-- (other projects trimmed) -->
 
         </div>
       </div>
@@ -505,7 +493,7 @@
       <h3 class="page-title white-text teal">Education</h3>
       <div class="container">
         <div class="row">
-          <!-- University of Toronto (only) -->
+          <!-- University of Toronto -->
           <div class="col s12 m6 l6">
             <div class="card">
               <div class="card-content">
@@ -533,7 +521,7 @@
             </div>
           </div>
 
-          <!-- (Removed Master's / other education as requested) -->
+          <!-- (other education removed) -->
 
         </div>
       </div>
@@ -593,12 +581,11 @@
       $(".scrollspy").scrollSpy()
       // Initialize collapse button
       $(".button-collapse").sideNav({
-        menuWidth: 190, // Default is 240
-        edge: "left", // Choose the horizontal origin
-        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        menuWidth: 190,
+        edge: "left",
+        closeOnClick: true
       })
     })
   </script>
 </body>
-
 </html>
