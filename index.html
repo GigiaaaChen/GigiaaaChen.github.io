@@ -21,50 +21,13 @@
   <!-- Custom Styles-->
   <link rel="stylesheet" href="/assets/css/style.css" />
 
-  <!-- Avatar ring + spacing -->
   <style>
- 
-    .side-nav.fixed.section.table-of-contents li.logo {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;  
-    padding-top: 4px;         
-    height: 160px;            
-    }
-
-    .profile-ring {
-      width: 140px;                
-      height: 140px;
-      border-radius: 50%;
-      border: 5px solid #4fa3e0;           
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: #c4dff3;
-      box-sizing: border-box;
-      margin: 0 auto 12px; 
-    }
-    .profile-ring img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    /* Mobile scaling */
-    @media (max-width: 992px){
-      .side-nav.fixed.section.table-of-contents li.logo { height: 150px; }
-      .profile-ring { width: 130px; height: 130px; border-width: 5px; margin-bottom: 6px; }
-    }
-
   .teal { background-color: #2970a3 !important; }
   .teal-text { color: #2970a3 !important; }
   .page-title.white-text.teal { background-color: #2970a3 !important; }
   a.teal-text:hover { color: #2970a3 !important; } 
   #intro { background: #2970a3 !important; } 
-  .overlay { background: rgba(41,112,163,0.50) !important; }  
-
-
+  .overlay { background: rgba(41,112,163,0.50) !important; }
   </style>
 
   <title>Georgia Chen | Software Developer</title>
@@ -128,11 +91,8 @@
     <ul class="side-nav fixed section table-of-contents">
       <li class="logo">
         <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-          class="brand-logo grey-blue-text" style="line-height:0;">
-          <div class="profile-ring">
-            <!-- space in filename encoded as %20 -->
-            <img src="/Updated-Info/Profile%20image.jpg" alt="Georgia Chen profile photo">
-          </div>
+          class="brand-logo grey-blue-text">
+          <img src="/Updated-Info/Profile%20image.jpg" class="circle img-responsive profile-pic" alt="Georgia Chen profile photo">
         </a>
       </li>
 
@@ -165,7 +125,7 @@
         <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text">
           <i class="mdi-content-mail small"></i><span>Contact</span></a>
       </li>
-            <li class="bold">
+      <li class="bold">
         <a aria-label="Navigate to the Travel section" href="#travel" class="waves-effect waves-dark teal-text">
           <i class="mdi-content-mail small"></i><span>Travel</span></a>
       </li>
