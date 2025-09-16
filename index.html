@@ -573,44 +573,54 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
 
   <script> 
-    const projects = [
-      { 
-        title: "OCR Receipt Scanner (PyTorch)", 
-        date: "2023-12-01", 
-        image: "/assets/img/project-ocr-placeholder.jpg", 
-        summary: "Deep-learning model to automate receipt parsing and expense tracking.", 
-        tools: ["PyTorch","ResNet","CRNN","VGG16","RNN","CTC Loss"], 
-        live: "#", 
-        source: "#" 
-      }, 
-      { 
-        title: "Interactive Map Software (C++)", 
-        date: "2023-04-01", 
-        image: "/assets/img/project-gis-placeholder.jpg", 
-        summary: "GIS mapping app with GUI focused on usability and responsiveness.", 
-        tools: ["C++","EZGL","GTK","Git"], 
-        live: "#", 
-        source: "#" 
-      } 
-    ]; 
-
+const projects = [
+  { 
+    title: "OCR Receipt Scanner (PyTorch)", 
+    date: "2023-12-01", 
+    image: "/assets/img/project-ocr-placeholder.jpg", 
+    summary: "Deep-learning model to automate receipt parsing and expense tracking.",
+    bullets: [
+      "Created a deep-learning model in PyTorch (Python) that automates receipt recording by extracting transaction date/time, total expenditure, and merchant details to help users track personal expenses.",
+      "Constructed the model with three parts: text detection, text recognition, and text extraction using ResNet, CRNN + VGG16, and RNN models.",
+      "Trained on 1,000+ samples with CTC loss; achieved ~90% accuracy measured via Character Error Rate."
+    ],
+    tools: ["PyTorch"], 
+    live: "#", 
+    source: "#" 
+  }, 
+  { 
+    title: "Interactive Map Software (C++)", 
+    date: "2023-04-01", 
+    image: "/assets/img/project-gis-placeholder.jpg", 
+    summary: "GIS mapping app with GUI focused on usability and responsiveness.",
+    bullets: [
+      "Developed mapping software using the EZGL library and GTK for GUI design; used Git for version control and documentation.",
+      "Implemented pathfinding algorithms including Greedy, A*, and Dijkstra with C++ STL containers.",
+      "Added night mode and one-way street direction display; designed the user interface and shortest-path navigation using heuristic methods with direction animation and text.",
+      "Included subway, stop, and traffic signs; successfully solved a Traveling Salesman Problem variant for route optimization."
+    ],
+    tools: ["C++","Git"], 
+    live: "#", 
+    source: "#" 
+  } 
+]; 
     projects.sort((a,b)=>new Date(b.date)-new Date(a.date)); 
     let visibleCount = 1; 
 
-    function renderListItems(items) {
-      return (items || []).map(text => `<li>${text}</li>`).join("");
-    }
+  function renderListItems(items) {
+    return (items || []).map(text => `<li>${text}</li>`).join("");
+  }
 
-    function renderRecentProjectCard(project) {
-      const toolsItem = project.tools && project.tools.length
-        ? `<li><b>Tools:</b> ${project.tools.join(", ")}</li>`
-        : "";
+  function renderRecentProjectCard(project) {
+    const toolsItem = project.tools && project.tools.length
+      ? `<li><b>Tools:</b> ${project.tools.join(", ")}</li>`
+      : "";
 
-      const detailsItems = project.bullets && project.bullets.length
-        ? renderListItems(project.bullets)
-        : (project.summary ? `<li>${project.summary}</li>` : "");
+    const detailsItems = project.bullets && project.bullets.length
+      ? renderListItems(project.bullets)
+      : (project.summary ? `<li>${project.summary}</li>` : "");
 
-      return `
+    return `
       <div class="col s12 m6 l4">
         <div class="card medium">
           <div class="card-image waves-effect waves-block waves-light">
@@ -640,23 +650,43 @@
           </div>
         </div>
       </div>`;
-    } 
+  }
 
-    function renderRecentProjects(){ 
-      const container = document.getElementById("projects-list"); 
-      container.innerHTML = projects.slice(0, visibleCount).map(renderRecentProjectCard).join(""); 
-      const btn = document.getElementById("loadMoreProjects"); 
-      btn.style.display = (visibleCount >= projects.length) ? "none" : "inline-block"; 
-      if (window.$ && $.fn.tooltip) { $(".tooltipped").tooltip(); } 
-    } 
+  // --- option 1: modular + simple names ---
+  function getShownProjects() {
+    return projects.slice(0, visibleCount);
+  }
 
-    document.addEventListener("DOMContentLoaded", function(){ 
-      renderRecentProjects(); 
-      document.getElementById("loadMoreProjects").addEventListener("click", function(){ 
-        visibleCount = Math.min(visibleCount + 2, projects.length); 
-        renderRecentProjects(); 
-      }); 
-    }); 
+  function showProjects() {
+    const container = document.getElementById("projects-list");
+    container.innerHTML = getShownProjects()
+      .map(renderRecentProjectCard)
+      .join("");
+  }
+
+  function toggleLoadButton() {
+    const btn = document.getElementById("loadMoreProjects");
+    btn.style.display = (visibleCount >= projects.length) ? "none" : "inline-block";
+  }
+
+  function updateProjectsUI() {
+    showProjects();
+    toggleLoadButton();
+    if (window.$ && $.fn.tooltip) { $(".tooltipped").tooltip(); }
+  }
+
+  function responderOnClickLoadMore() {
+    visibleCount = Math.min(visibleCount + 2, projects.length);
+    updateProjectsUI();
+  }
+
+  function responderOnLoad() {
+    updateProjectsUI();
+    const btn = document.getElementById("loadMoreProjects");
+    if (btn) btn.addEventListener("click", responderOnClickLoadMore);
+  }
+
+  document.addEventListener("DOMContentLoaded", responderOnLoad);
   </script>
 
   <script>
